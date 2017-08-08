@@ -1,0 +1,73 @@
+<div class="banner">
+		<div class="container">
+			<section class="slider">
+
+						<div class="flexslider">
+
+                            <ul class="slides">
+
+{% for carousel_obj in carousel_block %}
+
+                            <li>
+							<div class="banner-info animated wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="500ms">
+								<div class="banner-info-left">
+
+                                {{ carousel_obj.text|safe }}
+
+								</div>
+							</div>
+                            </li>
+
+{% endfor %}
+
+						</ul>
+
+					</div>
+
+
+				</section>
+
+							<!-- FlexSlider -->
+									  <script defer="" src="/static/js/jquery.flexslider.js"></script>
+									  <script type="text/javascript">
+										$(function(){
+
+										});
+										$(window).load(function(){
+										  $('.flexslider').flexslider({
+											animation: "slide",
+											start: function(slider){
+											  $('body').removeClass('loading');
+											}
+										  });
+										});
+									  </script>
+								<!-- FlexSlider -->
+		</div>
+	</div>
+
+
+{% comment %}
+
+
+<section class="sliders">
+			<ul class="sliders__main js-slider-main slider enable-bx-slider" data-auto="true" data-auto-hover="true" data-mode="fade" data-pager="false" data-pager-custom="null" data-prev-selector="null" data-next-selector="null" >
+
+{% for carousel_obj in carousel_block %}
+
+     <li>
+					<img src="/media/{{ carousel_obj.file }}" class="thbshpxktysplmywflo" alt="bxSlider" />
+					<div class="sliders__text">
+                        {{ carousel_obj.text|safe }}
+					</div>
+				</li>
+
+{% endfor %}
+
+
+
+			</ul>
+		</section>
+
+{% endcomment %}
+
